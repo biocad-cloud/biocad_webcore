@@ -34,6 +34,13 @@
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KEGG\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="KEGG\JSONparser.ts" />
+    <TypeScriptCompile Include="KEGG\models.ts" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
     <VisualStudio>
