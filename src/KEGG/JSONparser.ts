@@ -43,7 +43,7 @@ namespace KEGG.brite {
     }
 
     function parseIDEntry(text: string): IDEntry {
-        const list = text.split(/\s{2,}/g);
+        const list: string[] = text.split(/\s{2,}/g);
         const id: string = list[0];
         const names: string[] = $from(list)
             .Skip(1)
