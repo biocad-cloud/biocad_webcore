@@ -17,9 +17,14 @@
             return this.names[0];
         }
 
-        public constructor(
-            public id: string,
-            public names: string[]) {
+        public names: string[];
+
+        public constructor(public id: string, names: string[] | string) {
+            if (typeof names == "string") {
+                this.names = [names];
+            } else {
+                this.names = names;
+            }
         };
 
         public toString(): string {

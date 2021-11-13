@@ -44,14 +44,26 @@ namespace KEGG.brite {
 
     export function parseIDEntry(text: string): IDEntry {
         const list: string[] = text.split(/\s{2,}/g);
-        const id: string = list[0];
-        const names: string[] = $from(list)
-            .Skip(1)
-            .Select(s => s.split(/;\s*/g))
-            .Unlist(x => x)
-            .ToArray();
 
-        return new IDEntry(id, names);
+        if (text.indexOf(" ") == -1) {
+            return new IDEntry(text, text);
+        }
+
+        if (list.length > 1) {
+            const id: string = list[0];
+            const names: string[] = $from(list)
+                .Skip(1)
+                .Select(s => s.split(/;\s*/g))
+                .Unlist(x => x)
+                .ToArray();
+
+            return new IDEntry(id, names);
+        } else {
+            const id: string = text.match(/\d{4,}\s/ig)[0];
+            const name: string = text.substr(id.length);
+
+            return new IDEntry(Strings.Trim(id, " "), Strings.Trim(name, " "));
+        }
     }
 
     function isLeaf(node: IKEGGBrite): boolean {
