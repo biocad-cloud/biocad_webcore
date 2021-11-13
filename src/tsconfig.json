@@ -6,7 +6,7 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "../dist",
-    "outFile": "../build/biocad_webcore.js",
+    "outFile": "../../build/biocad_webcore.js",
     "declaration": true
   },
   "exclude": [
