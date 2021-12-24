@@ -37,11 +37,16 @@
   <ItemGroup>
     <Folder Include="KEGG\" />
     <Folder Include="MIME\" />
+    <Folder Include="MIME\File\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="MIME\File\bioClassType.ts" />
     <TypeScriptCompile Include="KEGG\JSONparser.ts" />
     <TypeScriptCompile Include="KEGG\models.ts" />
     <TypeScriptCompile Include="MIME\FastaParser.ts" />
+    <TypeScriptCompile Include="MIME\File\mimeType.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Utils.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
