@@ -18,10 +18,16 @@
         */
         public description: string;
 
+        /**
+         * 更加通用的大分类描述标签
+        */
+        public class: bioClassType;
+
         constructor(data: object) {
             this.classID = data["id"];
             this.contentType = data["content_type"];
             this.description = data["description"];
+            this.class = typeof data["class"] == "number" ? data["class"] : parseInt(data["class"]);
         }
 
         public toString(): string {
