@@ -20,6 +20,10 @@
         /**
          * The biological sequence data type, like fasta sequence file.
         */
-        bioSequence = 4
+        bioSequence = 4,
+        /**
+         * biological model file for run simulator
+        */
+        model = 5
     }
 }
